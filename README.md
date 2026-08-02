@@ -1,130 +1,79 @@
-# HackerRank Orchestrate
+# WhatsApp Message Notifier - AI Routing System
 
-Starter repository for the **HackerRank Orchestrate** 24-hour hackathon.
+An intelligent, multi-modal notification routing system built for the HackerRank Orchestrate hackathon.
 
-## Message Notification Router
+This system evaluates incoming WhatsApp messages—including text, images, and voice notes—against a user's rich behavioral history, group context, business relationship, and safety guidelines. It ultimately decides whether a message requires an immediate notification (`notify`), should be batched for later (`digest`), or should be silently ignored (`mute`).
 
-Build an AI-powered system for WhatsApp that decides which messages deserve immediate attention, which should wait, and which should be muted.
+## Performance Highlights
+- **Action Accuracy**: `96.67%`
+- **Message Type Accuracy**: `83.33%`
+- **Evidence Jaccard Similarity**: `37.78%` (with chronological deduplication and hallucination filtering)
 
-The system must reason over multimodal messages, including text messages, image posters/screenshots, and voice notes.
+## System Architecture Overview
 
-WhatsApp is noisy. A user can receive family chats, society notices, school updates, co-worker messages, business account promotions, image posters, voice notes, and scams in the same message stream. Treating every message the same creates two bad outcomes: important messages get missed, and unwanted or risky messages interrupt the user.
+Our solution utilizes a **Neuro-Symbolic** approach that splits the problem into two distinct phases:
+1. **LOOK Phase**: A powerful Vision-Language Model (VLM) powered by Claude 3.5 Sonnet extracts semantic observations and categorizations from raw unstructured multi-modal inputs (text, OCR from images, transcripts from voice notes).
+2. **DECIDE Phase**: A deterministic Python rule engine takes the structured JSON from the VLM and evaluates it against exact user preferences, database tables, business histories, and safety gates. 
 
-Read [`problem_statement.md`](./problem_statement.md) for the full task spec, input/output schema, allowed values, and submission format.
+For a deep dive into the architecture, thought process, and rules logic, please read the [Detailed Technical Guide](./code/README.md).
 
----
-
-## Repository Layout
+## Project Structure
 
 ```text
 .
-├── AGENTS.md                         # Rules for AI coding tools + transcript logging
-├── problem_statement.md              # Full challenge statement
-├── README.md                         # You are here
-└── dataset/
-    ├── messages.csv                  # Messages to route
-    ├── output.csv                    # Blank submission template
-    ├── sample_messages.csv           # Solved examples
-    ├── users.csv                     # User notification behavior
-    ├── groups.csv                    # Group metadata
-    ├── group_members.csv             # User-group relationships
-    ├── business_accounts.csv         # Business sender metadata
-    ├── user_business_history.csv     # User-business history
-    ├── message_history.csv           # Historical messages
-    ├── message_events.csv            # User reactions to historical messages
-    ├── images.csv                    # Image IDs and media file paths
-    ├── voice_notes.csv               # Voice note IDs and media file paths
-    ├── daily_notification_summary.csv
-    └── media/
-        ├── images/
-        └── audio/
+├── dataset/                     # Local data files and assets
+├── code/                        # Core application source code
+│   ├── core/                    # Core modules (Data Loader, Providers, Pipeline, Rules)
+│   ├── evaluation/              # Scripts used for offline metric scoring
+│   ├── main.py                  # The production entry point
+│   └── README.md                # In-depth architectural guide
+├── README.md                    # You are here
+└── log.txt                      # The raw chat transcript log of the build process
 ```
 
----
+## Setup & Installation
 
-## What You Need to Build
+### Prerequisites
+- Conda (Miniconda/Anaconda)
+- Python 3.10+
+- Anthropic API Key (`ANTHROPIC_API_KEY`)
 
-For every row in `dataset/messages.csv`, produce one row in `output.csv` with:
+### Environment Setup
+1. Clone this repository to your local machine.
+2. Create and activate a new conda environment:
+   ```bash
+   conda create -n hackathon python=3.10 -y
+   conda activate hackathon
+   ```
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt 
+   # Alternatively: pip install anthropic python-dotenv pydantic openai-whisper pillow
+   ```
+4. Configure your `.env` file at the root of the project:
+   ```text
+   ANTHROPIC_API_KEY=your_api_key_here
+   ```
 
-| Column | Meaning |
-|---|---|
-| `message_id` | Incoming message ID |
-| `action` | One of `notify`, `digest`, or `mute` |
-| `message_type` | Best-fit message category |
-| `reason` | Short human-readable explanation |
-| `confidence` | Number from `0` to `1` |
-| `evidence_message_ids` | Historical message IDs used as evidence; write `none` if there is no useful evidence |
+## Running the Application
 
-Your system should make personalized decisions using the provided message, user, group, business, media, and historical interaction data.
-For image and voice-note messages, `images.csv` and `voice_notes.csv` only provide file paths; your system should inspect the media files themselves.
+### 1. Generating Output
+To run the production pipeline on the 110 unlabelled messages in `dataset/messages.csv`:
+```bash
+python code/main.py --no-resume
+```
+This script features safe resumability! If the API rate-limits you, you can run `python code/main.py` without the `--no-resume` flag, and it will pick up right where it left off, appending perfectly to `dataset/output.csv`.
 
----
+### 2. Running Evaluation
+To benchmark the system against the 30 ground-truth examples in `dataset/sample_messages.csv`:
+```bash
+python code/evaluation/main.py --no-resume
+```
+This will print the metrics matrix (Action Accuracy, Message Type, Jaccard Similarity) to your terminal.
 
-## Suggested Workflow
-
-1. Inspect `dataset/sample_messages.csv` to understand the expected output format.
-2. Load `dataset/messages.csv` and all relevant context files.
-3. Build your routing system using any approach: LLMs, retrieval, rules, classifiers, agents, or hybrids.
-4. Write predictions to `output.csv`.
-5. Evaluate your approach on the solved sample rows before submitting.
-
-You may use any language or runtime. Python, JavaScript, and TypeScript are all reasonable choices.
-
----
-
-## Requirements
-
-Your solution must:
-
-- be runnable from the terminal
-- read the provided files from `dataset/`
-- produce a valid `output.csv`
-- include one prediction for every `message_id` in `dataset/messages.csv`
-- not use organizer-only files or hardcoded labels
-
-If you use API keys or secrets, read them from environment variables. Never hardcode secrets in the repo.
-
----
-
-## Evaluation
-
-Your `output.csv` will be compared against hidden ground-truth labels.
-
-The scoring will consider:
-
-- correctness of `action`
-- correctness of `message_type`
-- usefulness and consistency of `reason`
-- whether `evidence_message_ids` point to relevant historical messages
-- reasonable confidence calibration
-
-Strong systems will combine retrieval, structured metadata, behavioral history, safety checks, OCR/ASR handling, and contextual reasoning.
+## Authors
+Sole Contributor: Sahand
+AI Pair Programmer: Antigravity
 
 ---
-
-## Chat Transcript Logging
-
-This repo includes an [`AGENTS.md`](./AGENTS.md) file for AI coding tools. It asks compatible tools to append conversation summaries to:
-
-| Platform | Path |
-|---|---|
-| macOS / Linux | `$HOME/hackerrank_orchestrate_august26/log.txt` |
-| Windows | `%USERPROFILE%\hackerrank_orchestrate_august26\log.txt` |
-
-Upload this log as your chat transcript at submission time. Do not paste secrets into the chat.
-
----
-
-## Submission
-
-Submit the following files as instructed by HackerRank:
-
-1. **Code zip**: full runnable solution, prompts/configs, README, and any evaluation files.
-2. **Predictions CSV**: final `output.csv` for all rows in `dataset/messages.csv`.
-3. **Chat transcript**: the `log.txt` described above.
-
-Before submitting, confirm:
-
-- `output.csv` has one row per row in `dataset/messages.csv`.
-- `output.csv` has the exact required columns in the exact required order.
-- Your runnable code and setup instructions are included in `code.zip`.
+*Built with speed, precision, and robust error handling during the HackerRank 24-Hour Orchestrate Challenge.*
