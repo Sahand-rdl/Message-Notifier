@@ -49,10 +49,10 @@ Read `problem_statement.md` for the full participant-facing specification.
 
 The log file lives outside this repository so it survives branch switches, worktrees, and cleanup.
 
-| Platform | Path |
-|---|---|
-| macOS / Linux | `$HOME/hackerrank_orchestrate_august26/log.txt` |
-| Windows | `%USERPROFILE%\hackerrank_orchestrate_august26\log.txt` |
+| Platform      | Path                                                                        |
+| ------------- | --------------------------------------------------------------------------- |
+| macOS / Linux | `$HOME/Documents/MyFiles/Programming/Hackerrank Hackathon/August26/log.txt` |
+| Windows       | `%USERPROFILE%\hackerrank_orchestrate_august26\log.txt`                     |
 
 Rules:
 
