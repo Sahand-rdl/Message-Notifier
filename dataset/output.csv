@@ -1,111 +1,111 @@
 message_id,action,message_type,reason,confidence,evidence_message_ids
-msg_023,,,,,
-msg_091,,,,,
-msg_090,,,,,
-msg_048,,,,,
-msg_040,,,,,
-msg_075,,,,,
-msg_005,,,,,
-msg_104,,,,,
-msg_069,,,,,
-msg_107,,,,,
-msg_070,,,,,
-msg_003,,,,,
-msg_099,,,,,
-msg_008,,,,,
-msg_092,,,,,
-msg_060,,,,,
-msg_004,,,,,
-msg_030,,,,,
-msg_045,,,,,
-msg_052,,,,,
-msg_009,,,,,
-msg_071,,,,,
-msg_016,,,,,
-msg_065,,,,,
-msg_038,,,,,
-msg_086,,,,,
-msg_014,,,,,
-msg_094,,,,,
-msg_029,,,,,
-msg_105,,,,,
-msg_002,,,,,
-msg_010,,,,,
-msg_078,,,,,
-msg_013,,,,,
-msg_018,,,,,
-msg_044,,,,,
-msg_032,,,,,
-msg_106,,,,,
-msg_006,,,,,
-msg_109,,,,,
-msg_108,,,,,
-msg_019,,,,,
-msg_088,,,,,
-msg_056,,,,,
-msg_027,,,,,
-msg_050,,,,,
-msg_083,,,,,
-msg_063,,,,,
-msg_033,,,,,
-msg_061,,,,,
-msg_020,,,,,
-msg_017,,,,,
-msg_058,,,,,
-msg_026,,,,,
-msg_047,,,,,
-msg_046,,,,,
-msg_042,,,,,
-msg_079,,,,,
-msg_098,,,,,
-msg_037,,,,,
-msg_007,,,,,
-msg_085,,,,,
-msg_001,,,,,
-msg_021,,,,,
-msg_028,,,,,
-msg_012,,,,,
-msg_064,,,,,
-msg_103,,,,,
-msg_031,,,,,
-msg_057,,,,,
-msg_087,,,,,
-msg_067,,,,,
-msg_039,,,,,
-msg_082,,,,,
-msg_066,,,,,
-msg_049,,,,,
-msg_015,,,,,
-msg_051,,,,,
-msg_097,,,,,
-msg_089,,,,,
-msg_053,,,,,
-msg_059,,,,,
-msg_024,,,,,
-msg_072,,,,,
-msg_036,,,,,
-msg_076,,,,,
-msg_055,,,,,
-msg_102,,,,,
-msg_080,,,,,
-msg_093,,,,,
-msg_034,,,,,
-msg_035,,,,,
-msg_101,,,,,
-msg_041,,,,,
-msg_011,,,,,
-msg_110,,,,,
-msg_095,,,,,
-msg_074,,,,,
-msg_073,,,,,
-msg_054,,,,,
-msg_068,,,,,
-msg_100,,,,,
-msg_062,,,,,
-msg_096,,,,,
-msg_043,,,,,
-msg_077,,,,,
-msg_081,,,,,
-msg_025,,,,,
-msg_084,,,,,
-msg_022,,,,,
+msg_023,digest,business_update,Routine verified business update.,0.8,message_0092;message_0102
+msg_091,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_090,notify,personal,Direct mention detected in chat.,1.0,message_0339;message_0338
+msg_048,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_040,notify,forward,Urgent direct mention escalated from muted group.,0.95,message_0136;message_0135
+msg_075,notify,business_update,Verified business transactional update.,0.8,message_0206;message_0205
+msg_005,notify,promotion,Urgent action items or category detected.,0.8,message_0231;message_0049
+msg_104,mute,personal,The user has explicitly muted this sender before.,0.9,message_0115;message_0232
+msg_069,mute,greeting,Group is muted by user.,0.9,message_0193;message_0042
+msg_107,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_070,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_003,notify,business_update,Verified business transactional update.,0.8,message_0031;message_0061
+msg_099,digest,personal,Trusted contact personal message with no immediate urgency.,0.8,message_0249;message_0227
+msg_008,digest,spam,Routine verified business communication.,0.8,message_0072;message_0071
+msg_092,notify,payment,Verified business alert: payment.,0.8,message_0385;message_0344
+msg_060,notify,urgent,Urgent action items or category detected.,0.8,message_0176;message_0404
+msg_004,notify,event,Verified business transactional update.,0.8,message_0246;message_0245
+msg_030,mute,promotion,Group is muted by user.,0.9,message_0115;message_0050
+msg_045,notify,urgent,Urgent action items or category detected.,0.8,message_0031;message_0267
+msg_052,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_009,mute,personal,Group is muted by user.,0.9,message_0074;message_0073
+msg_071,digest,personal,Standard processing based on observations.,0.8,message_0197;message_0198
+msg_016,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_065,digest,promotion,Routine verified business communication.,0.8,message_0186;message_0185
+msg_038,digest,forward,Standard processing based on observations.,0.8,message_0131;message_0132
+msg_086,notify,event,Verified business alert: event.,0.8,message_0222
+msg_014,mute,spam,The user has explicitly muted this sender before.,0.9,message_0017;message_0084
+msg_094,digest,promotion,Routine verified business communication.,0.8,message_0356
+msg_029,digest,promotion,Standard processing based on observations.,0.8,message_0095;message_0332
+msg_105,mute,forward,The user has explicitly muted this sender before.,0.9,message_0233;message_0373
+msg_002,notify,urgent,Direct mention detected in chat.,1.0,message_0169;message_0266
+msg_010,digest,spam,Routine verified business communication.,0.8,message_0011;message_0242
+msg_078,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_013,notify,promotion,Urgent action items or category detected.,0.8,message_0408;message_0342
+msg_018,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_044,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_032,digest,personal,Standard processing based on observations.,0.8,message_0285;message_0119
+msg_106,notify,urgent,Urgent personal chat from trusted contact.,0.8,message_0234;message_0376
+msg_006,notify,urgent,Urgent action items or category detected.,0.8,message_0029;message_0068
+msg_109,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_108,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_019,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_088,notify,personal,Urgent action items or category detected.,0.95,message_0050;message_0224
+msg_056,notify,event,Urgent action items or category detected.,0.95,message_0226;message_0168
+msg_027,digest,promotion,Routine verified business communication.,0.8,message_0272;message_0033
+msg_050,notify,event,Verified business transactional update.,0.8,message_0279;message_0278
+msg_083,digest,personal,Standard processing based on observations.,0.8,message_0219
+msg_063,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_033,digest,greeting,Standard processing based on observations.,0.8,message_0121
+msg_061,mute,greeting,Group is muted by user.,0.9,message_0193;message_0042
+msg_020,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_017,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_058,mute,forward,Group is muted by user.,0.9,message_0078;message_0172
+msg_026,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_047,notify,urgent,Urgent action items or category detected.,0.8,message_0130;message_0150
+msg_046,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_042,notify,urgent,Urgent action items or category detected.,0.8,message_0140;message_0217
+msg_079,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_098,notify,urgent,Urgent personal chat from trusted contact.,0.8,message_0226;message_0168
+msg_037,notify,urgent,Urgent action items or category detected.,0.8,message_0149;message_0189
+msg_007,digest,event,Standard processing based on observations.,0.8,message_0070;message_0069
+msg_085,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_001,notify,urgent,Urgent action items or category detected.,0.8,message_0057;message_0240
+msg_021,notify,payment,Urgent action items or category detected.,0.8,message_0152;message_0271
+msg_028,mute,spam,The user has explicitly muted this sender before.,0.9,message_0034;message_0112
+msg_012,digest,forward,Standard processing based on observations.,0.8,message_0194;message_0247
+msg_064,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_103,notify,personal,Urgent personal chat from trusted contact.,0.8,message_0049;message_0065
+msg_031,notify,urgent,Urgent action items or category detected.,0.8,message_0055;message_0249
+msg_057,notify,urgent,Direct mention detected in chat.,1.0,message_0169;message_0266
+msg_087,mute,promotion,Group is muted by user.,0.9,message_0048;message_0223
+msg_067,notify,payment,Urgent action items or category detected.,0.8,message_0029;message_0068
+msg_039,notify,urgent,Urgent action items or category detected.,0.8,message_0037;message_0051
+msg_082,notify,urgent,Urgent action items or category detected.,0.8,message_0380;message_0218
+msg_066,mute,spam,The user has explicitly muted this sender before.,0.9,message_0017;message_0052
+msg_049,notify,business_update,Verified business transactional update.,0.8,message_0153;message_0291
+msg_015,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_051,mute,spam,The user has explicitly muted this sender before.,0.9,message_0052;message_0402
+msg_097,digest,personal,Trusted contact personal message with no immediate urgency.,0.8,message_0054;message_0225
+msg_089,notify,urgent,Urgent personal message from new sender.,0.8,message_0299;message_0396
+msg_053,digest,forward,Standard processing based on observations.,0.8,message_0411;message_0253
+msg_059,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_024,mute,spam,The user has explicitly muted this sender before.,0.9,message_0052;message_0034
+msg_072,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_036,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_076,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_055,notify,urgent,Urgent action items or category detected.,0.8,message_0387;message_0166
+msg_102,notify,urgent,Urgent personal chat from trusted contact.,0.8,message_0371;message_0230
+msg_080,notify,urgent,Urgent action items or category detected.,0.8,message_0130;message_0150
+msg_093,notify,business_update,Verified business transactional update.,0.8,message_0349;message_0348
+msg_034,mute,greeting,Group is muted by user.,0.9,message_0077;message_0171
+msg_035,digest,promotion,Routine verified business communication.,0.8,message_0128;message_0127
+msg_101,digest,personal,Trusted contact personal message with no immediate urgency.,0.8,message_0370;message_0229
+msg_041,digest,forward,Routine verified business communication.,0.8,message_0138;message_0137
+msg_011,mute,greeting,Group is muted by user.,0.9,message_0077;message_0171
+msg_110,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_095,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_074,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_073,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_054,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_068,digest,personal,Standard processing based on observations.,0.8,message_0192;message_0191
+msg_100,notify,urgent,Urgent personal chat from trusted contact.,0.8,message_0055;message_0249
+msg_062,digest,forward,Standard processing based on observations.,0.8,message_0043
+msg_096,notify,urgent,Urgent personal message from new sender.,0.8,message_0353;message_0354
+msg_043,notify,urgent,Urgent action items or category detected.,0.8,message_0269;message_0001
+msg_077,notify,event,Urgent action items or category detected.,0.8,message_0037;message_0051
+msg_081,notify,urgent,Urgent action items or category detected.,0.8,message_0217
+msg_025,notify,business_update,Verified business transactional update.,0.8,message_0105;message_0239
+msg_084,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+msg_022,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
