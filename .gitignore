@@ -1,0 +1,7 @@
+.checkpoint_main.json
+.checkpoint_eval.json
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.agents/
