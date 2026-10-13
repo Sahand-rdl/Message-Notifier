@@ -2,6 +2,11 @@
 
 An intelligent, multi-modal notification routing system built for the HackerRank Orchestrate hackathon.
 
+## 🥉 Hackathon Award
+> **Bronze Medal Winner** — Ranked in the **Top 10%** of participants (awarded to the top 15%).
+
+![HackerRank Orchestrate Certificate](./hackerrank-orchestrate-august26.gif)
+
 This system evaluates incoming WhatsApp messages—including text, images, and voice notes—against a user's rich behavioral history, group context, business relationship, and safety guidelines. It ultimately decides whether a message requires an immediate notification (`notify`), should be batched for later (`digest`), or should be silently ignored (`mute`).
 
 ## Performance Highlights
