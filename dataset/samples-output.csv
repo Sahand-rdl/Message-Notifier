@@ -1,0 +1,31 @@
+message_id,action,message_type,reason,confidence,evidence_message_ids
+sample_msg_001,notify,urgent,Urgent action items or category detected.,0.8,message_0129;message_0149
+sample_msg_002,notify,urgent,Urgent action items or category detected.,0.8,message_0133;message_0209
+sample_msg_003,notify,urgent,Direct mention detected in chat.,1.0,message_0170;message_0169
+sample_msg_004,notify,business_update,Verified business transactional update.,0.8,message_0105;message_0239
+sample_msg_005,notify,event,Verified business transactional update.,0.8,message_0246;message_0245
+sample_msg_006,notify,personal,Direct mention detected in chat.,1.0,message_0006;message_0222
+sample_msg_007,digest,promotion,Routine verified business communication.,0.8,message_0272;message_0033
+sample_msg_008,digest,event,Standard processing based on observations.,0.8,message_0008
+sample_msg_009,digest,greeting,Standard processing based on observations.,0.8,message_0132;message_0009
+sample_msg_010,digest,personal,Standard processing based on observations.,0.8,message_0010
+sample_msg_011,digest,business_update,Routine verified business update.,0.8,message_0011;message_0242
+sample_msg_012,digest,promotion,Standard processing based on observations.,0.8,message_0012
+sample_msg_013,mute,greeting,Group is muted by user.,0.9,message_0077;message_0171
+sample_msg_014,digest,forward,Standard processing based on observations.,0.8,message_0016;message_0015
+sample_msg_015,mute,spam,The user has explicitly muted this sender before.,0.9,message_0017;message_0084
+sample_msg_019,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+sample_msg_020,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+sample_msg_041,digest,personal,Standard processing based on observations.,0.8,message_0046
+sample_msg_042,notify,urgent,Urgent action items or category detected.,0.8,message_0047
+sample_msg_043,mute,spam,The user has explicitly muted this sender before.,0.9,message_0048;message_0357
+sample_msg_044,digest,promotion,Standard processing based on observations.,0.8,message_0095;message_0332
+sample_msg_045,mute,promotion,Group is muted by user.,0.9,message_0115;message_0232
+sample_msg_046,notify,event,Critical circular or safety alert in trusted group.,0.8,message_0037;message_0051
+sample_msg_047,mute,spam,The user has explicitly muted this sender before.,0.9,message_0052;message_0188
+sample_msg_048,digest,business_update,Routine verified business update.,0.8,message_0053;message_0412
+sample_msg_049,digest,personal,Message from unfamiliar sender with no urgency.,0.8,message_0299;message_0396
+sample_msg_050,digest,personal,Trusted contact personal message with no immediate urgency.,0.8,message_0054;message_0225
+sample_msg_051,notify,urgent,Urgent personal chat from trusted contact.,0.8,message_0055;message_0249
+sample_msg_052,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
+sample_msg_053,mute,scam,Blocked by strict evidence integrity gate.,1.0,none
